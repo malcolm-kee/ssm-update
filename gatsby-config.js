@@ -1,12 +1,8 @@
-const diffType = {
-  date: '9999-99-99',
-  records: [
-    {
-      section: 'Section',
-      title: 'Title',
-    },
-  ],
-}
+const path = require('path')
+
+require('dotenv').config({
+  path: path.resolve(__dirname, '.env'),
+})
 
 module.exports = {
   siteMetadata: {
@@ -15,14 +11,19 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-source-apiserver',
+      resolve: 'gatsby-source-mongodb',
       options: {
-        typePrefix: 'internal__',
-        url: 'https://malcolmkee.fun/api/diffs',
-        // url: 'http://localhost:3000/api/diffs',
-        method: 'get',
-        name: 'diffs',
-        schemaType: diffType,
+        // dbName: 'msia-ssm',
+        dbName: 'ssm-data',
+        collection: 'diffs',
+        // server: {
+        //   address: process.env.DB_ADDRESS,
+        //   port: Number(process.env.DB_PORT),
+        // },
+        // auth: {
+        //   user: process.env.DB_USER,
+        //   password: process.env.DB_PASSWORD,
+        // },
       },
     },
     {
