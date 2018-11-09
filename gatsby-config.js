@@ -13,17 +13,17 @@ module.exports = {
     {
       resolve: 'gatsby-source-mongodb',
       options: {
-        // dbName: 'msia-ssm',
-        dbName: 'ssm-data',
+        dbName: 'msia-ssm',
+        // dbName: 'ssm-data',
         collection: 'diffs',
-        // server: {
-        //   address: process.env.DB_ADDRESS,
-        //   port: Number(process.env.DB_PORT),
-        // },
-        // auth: {
-        //   user: process.env.DB_USER,
-        //   password: process.env.DB_PASSWORD,
-        // },
+        server: {
+          address: process.env.DB_ADDRESS,
+          port: Number(process.env.DB_PORT),
+        },
+        auth: {
+          user: process.env.DB_USER,
+          password: process.env.DB_PASSWORD,
+        },
       },
     },
     {
