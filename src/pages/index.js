@@ -6,8 +6,7 @@ const IndexPage = () => (
   <StaticQuery
     query={graphql`
       query data {
-        diffs: allInternalDiffs(
-          filter: { date: { nin: [null, "9999-99-99"] } }
+        diffs: allMongodbSsmdataDiffs(
           sort: { fields: date, order: DESC }
           limit: 5
         ) {
