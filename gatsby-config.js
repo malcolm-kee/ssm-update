@@ -14,7 +14,6 @@ module.exports = {
       resolve: 'gatsby-source-mongodb',
       options: {
         dbName: 'msia-ssm',
-        // dbName: 'ssm-data',
         collection: 'diffs',
         server: {
           address: process.env.DB_ADDRESS,
