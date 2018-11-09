@@ -1,5 +1,6 @@
-import React from 'react'
-import Layout from '../components/layout'
+import React from 'react';
+import Layout from '../components/layout';
+import { Disclaimer } from '../components/disclaimer';
 
 const SignupPage = () => (
   <Layout>
@@ -12,6 +13,7 @@ const SignupPage = () => (
         data-netlify="true"
         className="signup-form"
       >
+        <h2>Get notified for change of SSM Company Act</h2>
         <div className="field">
           <label htmlFor="subscriber-name" className="label">
             Your Name
@@ -53,7 +55,10 @@ const SignupPage = () => (
         </div>
       </form>
     </div>
+    <footer className="footer">
+      <Disclaimer />
+    </footer>
   </Layout>
-)
+);
 
-export default SignupPage
+export default SignupPage;
