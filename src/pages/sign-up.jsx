@@ -3,7 +3,42 @@ import Layout from '../components/layout'
 
 const SignupPage = () => (
   <Layout>
-    <div>SignupPage</div>
+    <div>
+      <form
+        name="signup"
+        method="POST"
+        action="/sign-up-success"
+        netlify-honeypot="trap"
+        data-netlify="true"
+        className="signup-form"
+      >
+        <div className="field">
+          <label htmlFor="subscriber-email" className="label">
+            Your Email
+          </label>
+          <input
+            id="subscriber-email"
+            name="email"
+            type="email"
+            placeholder="e.g. abc@xyz.com"
+            required
+            className="input"
+          />
+        </div>
+        <div data-netlify-recaptcha />
+        <div className="honey" aria-hidden={true}>
+          <label>
+            Don't fill up this if you're human: <input name="trap" />
+          </label>
+        </div>
+        <input type="hidden" name="form-name" value="signup" />
+        <div>
+          <button className="button" type="submit">
+            Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
   </Layout>
 )
 
