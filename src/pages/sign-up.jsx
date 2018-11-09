@@ -13,6 +13,20 @@ const SignupPage = () => (
         className="signup-form"
       >
         <div className="field">
+          <label htmlFor="subscriber-name" className="label">
+            Your Name
+          </label>
+          <input
+            id="subscriber-name"
+            name="name"
+            type="text"
+            placeholder="e.g. Steve Jobs"
+            required
+            className="input"
+            autoComplete="name"
+          />
+        </div>
+        <div className="field">
           <label htmlFor="subscriber-email" className="label">
             Your Email
           </label>
@@ -23,9 +37,9 @@ const SignupPage = () => (
             placeholder="e.g. abc@xyz.com"
             required
             className="input"
+            autoComplete="email"
           />
         </div>
-        <div data-netlify-recaptcha />
         <div className="honey" aria-hidden={true}>
           <label>
             Don't fill up this if you're human: <input name="trap" />
